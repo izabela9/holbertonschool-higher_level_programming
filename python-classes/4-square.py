@@ -24,7 +24,7 @@ class Square:
         python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
         """
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """
