@@ -10,7 +10,7 @@ class Square:
     This is the documentation for the Square class.
     The class represents a geometric square and associated operations.
     """
-    def __init__(self, size):
+    def __init__(self, size=0):
         """
         python3 -c 'print(__import__("my_module").my_function.__doc__)'
         python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
