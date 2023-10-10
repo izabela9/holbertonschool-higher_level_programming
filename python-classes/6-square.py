@@ -40,10 +40,18 @@ class Square:
 
     @property
     def position(self):
+        """
+        python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+        """
         return self.__position
 
     @position.setter
     def position(self, value):
+        """
+        python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+        """
         if (isinstance(value, tuple) is False or len(value) != 2
             or isinstance(value[0], int) is False or value < 0
                 or isinstance(value[1], int) is False or value < 0):
@@ -58,13 +66,18 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
+        """
+        python3 -c 'print(__import__("my_module").my_function.__doc__)'
+        python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+        """
         if self.__size == 0:
             print("")
-        for i in range(self.__position[1]):
-            print("")
-        for j in range(self.__size):
-            for c in range(self.__position[0]):
-                print(" ", end="")
-            for b in range(self.__size):
-                print("#", end="")
-            print("")
+        else:
+            for i in range(self.__position[1]):
+                print("")
+            for j in range(self.__size):
+                for c in range(self.__position[0]):
+                    print(" ", end="")
+                for b in range(self.__size):
+                    print("#", end="")
+                print("")
