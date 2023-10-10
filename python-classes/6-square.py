@@ -52,9 +52,9 @@ class Square:
         python3 -c 'print(__import__("my_module").my_function.__doc__)'
         python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
         """
-        if (isinstance(value, tuple) is False or len(value) != 2
-            or isinstance(value[0], int) is False or value < 0
-                or isinstance(value[1], int) is False or value < 0):
+        if (not isinstance(value, tuple) or len(value) != 2
+            or not isinstance(value[0], int) or value < 0
+                or not isinstance(value[1], int) or value < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -71,13 +71,13 @@ class Square:
         python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
         """
         if self.__size == 0:
-            print("")
+            print()
         else:
             for i in range(self.__position[1]):
-                print("")
+                print()
             for j in range(self.__size):
                 for c in range(self.__position[0]):
                     print(" ", end="")
                 for b in range(self.__size):
                     print("#", end="")
-                print("")
+                print()
