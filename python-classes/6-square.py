@@ -16,7 +16,7 @@ class Square:
         python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
         """
         self.__size = size
-        self.__position = position
+        self.position = position
 
     @property
     def size(self):
@@ -74,11 +74,11 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            for i in range(self.__position[1]):
+            for ver_space in range(self.__position[1]):
                 print()
-            for j in range(self.__size):
-                for c in range(self.__position[0]):
+            for row in range(self.__size):
+                for hor_space in range(self.__position[0]):
                     print(' ', end='')
-                for b in range(self.__size):
+                for col in range(self.__size):
                     print('#', end='')
                 print()
