@@ -11,6 +11,7 @@ class Rectangle:
     """
     number_of_instances = 0
     print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """
         Init method for square instances
@@ -68,17 +69,14 @@ class Rectangle:
         return 2*self.width + 2*self.height
 
     def __str__(self):
-        hello = ''
-        for i in range(self.__height):
-            for j in range(self.width):
-                hello += "#"
-            if i != self.__height - 1:
-                hello += "\n"
-        return hello
+        return str(self.print_symbol) * self.width + "\n" + \
+               (str(self.print_symbol) + " " * (self.width - 2) +
+                self.print_symbol + "\n") * (self.height - 2) + \
+               str(self.print_symbol) * self.width
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
-    
+
     def __del__(self):
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
