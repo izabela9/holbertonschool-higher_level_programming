@@ -7,7 +7,6 @@ python3 -c 'print(__import__("my_module").MyClass.__doc__)'
 
 class Rectangle:
     """
-    This is the documentation for the Square class.
-    The class represents a geometric square and associated operations.
+    This is the documentation for the Rectangle class.
     """
     pass
