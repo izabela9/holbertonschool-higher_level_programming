@@ -69,14 +69,14 @@ class Rectangle:
         return 2*self.width + 2*self.height
 
     def __str__(self):
-        symbol = str(self.print_symbol)
+        s = str(self.print_symbol)
         if self.width == 0 or self.height == 0:
             return ""
         if self.width == 1:
-            return symbol * self.height
+            return s * self.height
         if self.height == 1:
-            return symbol * self.width
-        return (symbol * self.width + '\n') * (self.height - 1) + symbol * self.width
+            return s * self.width
+        return (s * self.width + '\n') * (self.height - 1) + s * self.width
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
@@ -90,7 +90,7 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if isinstance(rect_2, Rectangle) is False:
             raise TypeError("rect_2 must be an instance of Rectangle")
-        
+
         area1 = rect_1.area()
         area2 = rect_2.area()
 
@@ -98,6 +98,3 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
-
-        
-
