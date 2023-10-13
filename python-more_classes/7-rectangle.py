@@ -74,7 +74,8 @@ class Rectangle:
             return symbol * self.height
         if self.height == 1:
             return symbol * self.width
-        return (symbol * self.width + '\n') * (self.height - 1) + symbol * self.width
+        return (symbol * self.width + '\n') * (self.height - 1)
+    + symbol * self.width
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
