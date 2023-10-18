@@ -30,4 +30,4 @@ class Rectangle(BaseGeometry):
         String represantation of the rectangle
         instance
         """
-        return f"[{self.__class__.__name__}] {self.__width}/{self.__height}"
+        return f"[Rectangle] {self.__width}/{self.__height}"
