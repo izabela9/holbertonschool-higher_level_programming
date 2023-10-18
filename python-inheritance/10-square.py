@@ -17,10 +17,3 @@ class Square(Rectangle):
         of the square
         '''
         return self.__size ** 2
-    
-s = Square(13)
-
-print(s)
-print(s.area())
-
-
