@@ -14,6 +14,6 @@ filename = "add_item.json"
 
 with open(filename, 'a+', encoding="utf-8") as f:
     my_list = []
-    my_list = load_from_json_file(filename)
     my_list.extend(args)
     save_to_json_file(my_list, filename)
+    load_from_json_file(filename)
