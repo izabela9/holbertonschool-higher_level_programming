@@ -4,9 +4,6 @@ Python simple module
 '''
 
 
-import json
-
-
 def class_to_json(obj):
     '''
     Function to convert an object
