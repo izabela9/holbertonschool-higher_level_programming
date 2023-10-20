@@ -3,10 +3,15 @@
 Python simple module
 '''
 
+
 def pascal_triangle(n):
+    '''
+    Function to print pascal triangle
+    '''
     if n <= 0:
         return []
-
+    if n <= 1:
+        return [[1]]
     pascals_triangle = []
     for i in range(n):
         row = []
