@@ -77,12 +77,10 @@ class Rectangle(Base):
         '''
         Function to display the rectangle with #
         '''
-        if self.y != 0:
-            print("\n" * (self.y - 1))
+        for _ in range(self.y):
+            print()
         for _ in range(self.height):
-            if self.x != 0:
-                print(' ' * self.x, end="")
-            print("#" * self.width)
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         return f"[Rectangle]\
