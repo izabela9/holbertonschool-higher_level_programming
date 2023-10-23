@@ -9,7 +9,6 @@ class Base:
     Class for Base objects
     '''
 
-
     __nb_objects = 0
 
     def __init__(self, id=None):
