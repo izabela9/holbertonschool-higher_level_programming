@@ -88,7 +88,7 @@ class Rectangle(Base):
 
     def update(self, *args):
         '''
-        update function 
+        update function
         '''
         if len(args) == 1:
             self.id = args[0]
