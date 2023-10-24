@@ -27,6 +27,9 @@ class Square(Rectangle):
  - {self.width}"
 
     def update(self, *args, **kwargs):
+        '''
+        Function to update the instance attributes
+        '''
         attributes = ['id', 'size', 'x', 'y']
 
         for idx in range(len(args)):
