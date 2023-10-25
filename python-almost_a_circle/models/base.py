@@ -37,8 +37,11 @@ class Base:
         function for writing
         the JSON string representation of list_objs to a file
         '''
-        if list_objs is not None:
-            d_list = [obl.to_dictionary() for obl in list_objs]
-            json_string = cls.to_json_string(d_list)
-            with open(f"{cls.__name__}.json", "w+") as f:
-                f.write(json_string)
+        if list_objs is None:
+            list_objs = []
+        
+        d_list = [obl.to_dictionary() for obl in list_objs]
+        json_string = cls.to_json_string(d_list)
+            
+        with open(f"{cls.__name__}.json", "w+") as f:
+            f.write(json_string)
