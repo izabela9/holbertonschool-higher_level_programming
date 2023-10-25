@@ -51,6 +51,6 @@ class Base:
         '''
         function to return the list of the json string representation
         '''
-        if json_string is None:
-            json_string = []
+        if json_string is None or len(json_string) == 0:
+            return []
         return json.loads(json_string)
