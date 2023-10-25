@@ -42,6 +42,6 @@ class Base:
 
         with open(filename, "w+") as f:
             if list_objs is None:
-                f.write(json.dumps([]))
+                f.write(cls.to_json_string([]))
                 return
             f.write(cls.to_json_string(d_list))
