@@ -2,6 +2,9 @@
 """Test module"""
 import unittest
 import os
+import sys
+import io
+
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
