@@ -42,6 +42,6 @@ class Base:
 
         with open(filename, "w") as f:
             if d_list is None or len(d_list) == 0:
-                f.write("[]")
+                f.write(json.dumps([]))
                 return
             f.write(cls.to_json_string(d_list))
