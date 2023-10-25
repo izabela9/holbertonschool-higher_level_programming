@@ -38,8 +38,7 @@ class Base:
         the JSON string representation of list_objs to a file
         '''
         if list_objs is not None:
-            d_list = [obl.to_dictionary() for obl in list_objs
-                  if issubclass(obl.__class__, Base)]
+            d_list = [obl.to_dictionary() for obl in list_objs]
     
         with open(f"{cls.__name__}.json", "w+") as f:
             f.write(cls.to_json_string(d_list))
