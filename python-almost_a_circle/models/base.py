@@ -41,7 +41,7 @@ class Base:
         d_list = [obl.to_dictionary() for obl in list_objs]
 
         with open(filename, "w+") as f:
-            if d_list is None:
+            if list_objs is None:
                 f.write(json.dumps([]))
                 return
             f.write(cls.to_json_string(d_list))
