@@ -45,4 +45,4 @@ class Base:
             if list_objs is None:
                 f.write(json.dumps([]))
                 return
-            f.write(cls.to_json_string(d_list))
+            f.write(Base.to_json_string(d_list))
