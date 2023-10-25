@@ -39,6 +39,7 @@ class Base:
         '''
         if list_objs is not None:
             d_list = [obl.to_dictionary() for obl in list_objs]
-    
+            json_string = cls.to_json_string(d_list)
+
         with open(f"{cls.__name__}.json", "w+") as f:
-            f.write(cls.to_json_string(d_list))
+            f.write(json_string)
