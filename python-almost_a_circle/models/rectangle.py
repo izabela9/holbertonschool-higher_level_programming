@@ -90,6 +90,10 @@ class Rectangle(Base):
         '''
         update function
         '''
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
         if len(args) == 1:
             self.id = args[0]
         elif len(args) == 2:
@@ -100,9 +104,6 @@ class Rectangle(Base):
             self.x = args[3]
         elif len(args) == 5:
             self.y = args[4]
-        elif len(args) == 0:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
 
     def to_dictionary(self):
         '''
