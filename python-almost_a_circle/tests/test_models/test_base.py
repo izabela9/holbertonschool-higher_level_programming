@@ -1,10 +1,6 @@
 #!/usr/bin/python3
 """Test module"""
-import unittest
-import os
-import sys
-import io
-
+import io, sys, unittest, os
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -29,7 +25,7 @@ class TestBase(unittest.TestCase):
 
     def test_id_uniq(self):
         self.assertEqual(20, Base(20).id)
-
+    
     def test_id_pub(self):
         base1 = Base(15)
         base1.id = 20
@@ -53,7 +49,6 @@ class TestBase(unittest.TestCase):
     def test_from_json_string_dict(self):
         self.assertEqual(list, type(Base.from_json_string('[{"id": 89}]')))
 
-
 class TestBaseCreate(unittest.TestCase):
     def test_create_rectangle(self):
         rect = Rectangle(1, 2, 3, 4, 5)
@@ -66,7 +61,6 @@ class TestBaseCreate(unittest.TestCase):
         sq_dict = sq.to_dictionary()
         sq2 = Square.create(**sq_dict)
         self.assertEqual("[Square] (4) 2/3 - 1", str(sq2))
-
 
 class TestBaseSaveToFile(unittest.TestCase):
     # Delete created files
@@ -104,10 +98,9 @@ class TestBaseSaveToFile(unittest.TestCase):
     def test_save_to_file_sq(self):
         sq = Square(10, 7, 2, 8)
         Square.save_to_file([sq])
-
         with open("Square.json", "r") as f:
             self.assertTrue(len(f.read()) == 39)
-
+            
     def test_save_to_file_none_sq(self):
         Square.save_to_file(None)
         with open("Square.json", "r") as f:
@@ -115,10 +108,8 @@ class TestBaseSaveToFile(unittest.TestCase):
 
     def test_save_to_file_empty_list_sq(self):
         Square.save_to_file([])
-
         with open("Square.json", "r") as f:
             self.assertEqual("[]", f.read())
-
 
 class TestBaseLoadFrom(unittest.TestCase):
     # Delete created files
@@ -160,7 +151,6 @@ class TestBaseLoadFrom(unittest.TestCase):
         Square.save_to_file([sq1, sq2])
         list_sq = Square.load_from_file()
         self.assertEqual(str(sq2), str(list_sq[1]))
-
 
 if __name__ == "__main__":
     unittest.main()
